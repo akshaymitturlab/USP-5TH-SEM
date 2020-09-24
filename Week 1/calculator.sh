@@ -1,14 +1,12 @@
 #! /bin/sh
-echo "enter two numbers"
+echo 'Enter a'
 read a
+echo 'Enter b'
 read b
-sum=$(($a+$b))
-dif=$(($a-$b))
-mul=$(($a*$b))
-quo=$(($a/$b))
-rem=$(($a%$b))
-echo $sum
-echo $dif
-echo $mul
-echo $quo
-echo $rem
+sum=`echo $a \+ $b|bc`
+echo "$a + $b = $sum"
+diff=`echo $a - $b|bc`
+echo "$a - $b = $diff"
+echo "$a * $b = "`echo $a \* $b|bc`
+echo "$a / $b = "`echo $a \/ $b|bc`
+echo "$a % $b = "`echo $a % $b|bc`
