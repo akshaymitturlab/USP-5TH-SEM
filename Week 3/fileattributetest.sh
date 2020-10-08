@@ -1,11 +1,20 @@
 #! /bin/sh
 
-if test $# -eq 0
-then
-	echo "Usage $1 pattern in file $1"
-elif test $# -eq 2
-then
-	grep "$1" $2 || echo "$1 not found in $2"
+if test $# -eq 2
+then 
+	if [ -f $1 ]
+	then
+		ls -l $1
+	else
+		echo "$1 is not a file"
+	fi
+	if [ -f $2 ]
+	then
+		ls -l $2
+	else
+		echo "$2 is not a file"
+	fi
+	
 else
-	echo "Didn't enter 2 valid arguments"
+echo "You did not enter two arguments"
 fi
